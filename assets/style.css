@@ -1,0 +1,24 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0em 5%;
+}
+main {
+    margin: 8% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;    
+    max-width: 35rem;
+}
+button {
+width: 30%;
+height: 30px;
+font-size: large;
+    background-color: darkslateblue;
+    color: rgb(231, 224, 216);
+}
+.imp {
+    color: darkred;
+}
