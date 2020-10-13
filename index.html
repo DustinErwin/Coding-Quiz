@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="assets/style.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="assets/style.css" />
+   <script defer src='assets/script.js'></script>
+  </head>
+  <body>
     <header>
-        <h3>View Highscores</h3>
-        <h3>Time: <span>0</span></h3>
+      <h3>View Highscores</h3>
+      <h3>Time: <span id="timer">0</span></h3>
     </header>
     <main>
-        <h1>Coding Quiz Challenge</h1>
-        <h2>Try to answer the following code-related questions within the time limit.
-            Incorrect answers will <em class="imp">reduce</em> time remaining by ten seconds! Good Luck!
+      <div class='intro'>
+      <h1>Coding Quiz Challenge</h1>
+     
+        <h2>
+          Try to answer the following code-related questions within the time
+          limit. Incorrect answers will <em class="imp">reduce</em> time
+          remaining by ten seconds! Good Luck!
         </h2>
-        <button>Start Quiz</button>
+        <button class='startBtn' id="startBtn">Start Quiz</button>
+      </div>
+      <div class="quizArea">
+        <h1 id='question'></h1>
+        <br>
+        <button class='quizBtn' id='ansOne'></button>
+        <button class='quizBtn' id='ansTwo'></button>
+        <button class='quizBtn' id='ansThree'></button>
+        <button class='quizBtn' id='ansFour'></button>
+      </div>
     </main>
-    
-</body>
+  </body>
 </html>

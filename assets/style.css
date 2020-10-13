@@ -1,24 +1,42 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    margin: 0em 5%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0em 5%;
 }
-main {
-    margin: 8% auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;    
-    max-width: 35rem;
+.intro {
+  margin: 8% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 35rem;
 }
-button {
-width: 30%;
-height: 30px;
-font-size: large;
-    background-color: darkslateblue;
-    color: rgb(231, 224, 216);
+.startBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 30px;
+  font-size: large;
+  background-color: darkslateblue;
+  color: rgb(231, 224, 216);
 }
 .imp {
-    color: darkred;
+  color: darkred;
+}
+.quizArea{
+  display: none;
+  margin: 8% auto;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 35rem;
+}
+.quizBtn{
+  margin-top: 5px;
+  padding: 3px 0;
+  max-width: 30%;
+  background-color: darkslateblue;
+  color: rgb(231, 224, 216);
 }
