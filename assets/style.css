@@ -40,3 +40,10 @@ header {
   background-color: darkslateblue;
   color: rgb(231, 224, 216);
 }
+.quizFinish{
+  display: none;
+  margin: 8% auto;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 35rem;
+}
