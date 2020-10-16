@@ -3,6 +3,11 @@ header {
   justify-content: space-between;
   margin: 0em 5%;
 }
+#scoreList{
+  display: none;
+  margin-left: 50px;
+  font-size: large;
+}
 .intro {
   margin: 8% auto;
   display: flex;
@@ -46,4 +51,17 @@ header {
   flex-direction: column;
   justify-content: space-around;
   max-width: 35rem;
+}
+#init{
+  max-width: 10%;
+  height: 5%;
+  font-size: large;
+}
+#save{
+  margin-top: 5px;
+  width: 30%;
+  height: 30px;
+  font-size: large;
+  background-color: darkslateblue;
+  color: rgb(231, 224, 216);
 }

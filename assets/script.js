@@ -1,24 +1,27 @@
 let intro = document.querySelector(".intro");
 let quizArea = document.querySelector(".quizArea");
-
+let comment = document.querySelector("#comment");
 let startBtn = document.getElementById("startBtn");
 let btnOne = document.querySelector("#ansOne");
 let btnTwo = document.querySelector("#ansTwo");
 let btnThree = document.querySelector("#ansThree");
 let btnFour = document.querySelector("#ansFour");
 let question = document.querySelector("#question");
-let isWrong = document.querySelector("#isWrong");
+
 let quizFinish = document.querySelector(".quizFinish");
 let score = document.querySelector("#score");
 let init = document.querySelector("#init");
 let saveBtn = document.querySelector("#save");
-
+let scrList = document.querySelector("#scoreList");
+let chkHghscr = document.querySelector("#chkHghscr");
+let ding;
+let buzz;
 let seconds = 60;
 let count = 0;
 let countDown = 75;
 let highScores = [];
 let tally = 0;
-let teacher = ["Correct!", "Wrong!"];
+
 //Questions
 let questions = [
   "How do you add an object to the end of an array?",
@@ -61,9 +64,11 @@ function go() {
   intro.setAttribute("style", "display: none;");
   quizArea.setAttribute("style", "display: flex;");
   secInt = setInterval(clock, 1000);
+  seconds = 60;
+  tally = 0;
+  count = 0;
   quiz();
 }
-
 //Fills quiz area with quiz data
 function quiz() {
   console.log(count);
@@ -91,15 +96,16 @@ btnFour.addEventListener("click", function (event) {
   Check(3);
 });
 
-//Checks Answers for correctness
+//Checks Answers for correctness, removes time if wrong
 function Check(ans) {
   if (correctAns[count] === ans) {
     tally++;
-
-    isWrong.textContent = teacher[0];
+    ding = new Audio("assets/ding.mp3");
+    ding.play();
   } else {
     clock(10);
-    isWrong.textContent = teacher[1];
+    buzz = new Audio("assets/buzz.wav");
+    buzz.play();
   }
   count++;
   if (count === 10) {
@@ -107,31 +113,51 @@ function Check(ans) {
     end();
     return;
   }
-
   quiz();
 }
+//Brings up endgame input
 function end() {
+  clearInterval(secInt)
+  quizArea.setAttribute("style", "display: none;");
   quizFinish.setAttribute("style", "display: flex;");
   score.textContent = " " + tally;
 }
+//Adds initials to highscores and returns to main screen
 function save() {
   let scoreObj = {
     initials: init.value,
     score: tally,
   };
   highScores.push(scoreObj);
+  quizFinish.setAttribute("style", "display: none;");
+  intro.setAttribute("style", "display: flex;");
+  
 }
-
+//Controls timer
 function clock(decrement = 1) {
   seconds -= decrement;
   let timer = document.querySelector("#timer");
-  timer.textContent = " " + seconds;
   if (seconds <= 0) {
     clearInterval(secInt);
-
-    end()
+    seconds = 0;
+    comment.textContent = "You ran out of time!";
+    timer.textContent = " " + seconds;
+    end();
+    return;
   }
-}
 
+  timer.textContent = " " + seconds;
+}
+//Sorts and populates high score list
+function scoreList() {
+  highScores.sort();
+  for (let i = 0; i < highScores.length; i++) {
+    let li = scrList.createElement('li');
+    scrList.appendChild(li);
+    li.textContent = highScores[i];
+  }
+  scrList.setAttribute("style", "display: block;");
+}
+chkHghscr.addEventListener("click", scoreList);
 saveBtn.addEventListener("click", save);
 startBtn.addEventListener("click", go);
