@@ -43,6 +43,7 @@ header {
   display: none;
   margin: 8% auto;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   max-width: 35rem;
 }
