@@ -1,6 +1,6 @@
 # Coding-Quiz
 Quiz to test Java Script Coding skills.
 
-<iframe src="https://drive.google.com/file/d/1PJtSIRGfeNO-TPPoIpX00WBNOkGIxL-e/preview" width="640" height="480"></iframe>
+![Javascript Quiz](https://user-images.githubusercontent.com/70966543/96347863-9b22d700-1072-11eb-8f92-fe10bd4ed643.gif)
 
 https://dustinerwin.github.io/Coding-Quiz/
