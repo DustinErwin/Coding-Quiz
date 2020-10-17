@@ -3,15 +3,21 @@ header {
   justify-content: space-between;
   margin: 0em 5%;
 }
+.container{
+  display: flex;
+  justify-content: space-around;
+}
 #scrList{
   display: none;
-  position: absolute;
-  margin-left: 50px;
+  margin-left: 5%;
+  max-width: 5rem;
   font-size: large;
-  float: left;
+  background-color: royalblue;
+  color: lightgoldenrodyellow;
+ 
 }
 .intro {
-  margin: 8% auto;
+  margin: 8% auto auto 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,8 +29,9 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 30%;
-  height: 30px;
+  height: 40px;
   font-size: large;
   background-color: darkslateblue;
   color: rgb(231, 224, 216);
